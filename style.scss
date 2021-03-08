@@ -8,10 +8,15 @@
 #slider-box{
     height: 100vh;
     overflow: hidden;
+    position: relative;
     .slider-item{
         height: 100vh;
         animation-name: slider-item;
         animation-duration: 1s;
+        display: none;
+    }
+    .slider-active{
+        display: block;
     }
     @for $index from 1 through 3 {
         .slider-item:nth-of-type(#{$index}){
@@ -29,6 +34,50 @@
         // backwards 一開始顯示 0%效果
         // fowward 一開始顯示 100%效果
         animation-fill-mode: backwards;
+    }
+
+    #slider-prev , #slider-next{
+        width: 30px;
+        height: 50px;
+        cursor: pointer;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        transition: 1s;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    #slider-prev{
+        left: 0;
+    }
+    #slider-next{
+        right: 0;
+    }
+    #slider-dots{
+        width: 100%;
+        position: absolute;
+        bottom: 50px;
+        text-align: center;
+        .slider-dot{
+            z-index: 3;
+            width: 30px;
+            height: 30px;
+            background: black;
+            display: inline-block;
+            margin-right: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            &:last-child{
+                margin-right: 0;
+            }
+
+            
+        }
+        .slick-dot-active{
+            background: rgba(165, 165, 165, 0.8);
+        }
     }
     
 }
@@ -48,7 +97,7 @@
         
     }
     100%{
-        transform:rotate(360deg);
+        transform: translateX(0px);
         
     }
 }
