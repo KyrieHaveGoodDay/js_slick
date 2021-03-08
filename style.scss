@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+#slider-box{
+    .slider-item{
+        height: 100vh;
+        animation-name: slider-item;
+        animation-duration: 1s;
+    }
+    @for $index from 1 through 3 {
+        .slider-item:nth-of-type(#{$index}){
+            background-image: url(./img/icon#{$index}.jpg);
+        }
+    }
+    h1{
+        color: white;
+        font-size: 72px;
+        padding: 100px 150px;
+        text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+        // 簡寫:動畫名稱 持續時間 延遲時間
+        animation: slider-h1 1s 1s ;
+        // 填滿模式:
+        // backwards 一開始顯示 0%效果
+        // fowward 一開始顯示 100%效果
+        animation-fill-mode: backwards;
+    }
+    
+}
+
+@keyframes slider-item{
+    0%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes slider-h1 {
+    0%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
