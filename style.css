@@ -7,6 +7,11 @@
   font-family: 微軟正黑體;
 }
 
+#slider-box {
+  height: 100vh;
+  overflow: hidden;
+}
+
 #slider-box .slider-item {
   height: 100vh;
   -webkit-animation-name: slider-item;
@@ -66,8 +71,8 @@
             transform: translateX(-1000px);
   }
   100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -77,8 +82,8 @@
             transform: translateX(-1000px);
   }
   100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -6,6 +6,8 @@
 }
 
 #slider-box{
+    height: 100vh;
+    overflow: hidden;
     .slider-item{
         height: 100vh;
         animation-name: slider-item;
@@ -43,8 +45,10 @@
 @keyframes slider-h1 {
     0%{
         transform: translateX(-1000px);
+        
     }
     100%{
-        transform: translateX(0px);
+        transform:rotate(360deg);
+        
     }
 }
